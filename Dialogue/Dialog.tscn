@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Dialogue/Speech_Text.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Dialogue/Dialog.gd" type="Script" id=2]
+
+[node name="Dialog" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Speech_Text" parent="." instance=ExtResource( 1 )]
+[connection signal="text_started" from="Speech_Text" to="." method="_on_Speech_Text_text_started"]
