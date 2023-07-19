@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cinx42lmsgkf4"]
+
+[sub_resource type="PhysicsMaterial" id="1"]
+
+[sub_resource type="CapsuleShape2D" id="2"]
+radius = 2.0
+height = 10.0
+
+[node name="Cardboard_box" type="RigidBody2D"]
+mass = 5.0
+physics_material_override = SubResource("1")
+gravity_scale = 0.0
+linear_damp = 100.0
+
+[node name="RigidBody2D" type="Sprite2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+rotation = 1.5708
+shape = SubResource("2")

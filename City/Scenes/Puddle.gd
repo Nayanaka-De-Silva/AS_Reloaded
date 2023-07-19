@@ -1,6 +1,6 @@
 extends Area2D
 
-onready var animation = $AnimatedSprite
+@onready var animation = $AnimatedSprite2D
 
 func _on_Puddle_body_entered(body):
 	animation.play()

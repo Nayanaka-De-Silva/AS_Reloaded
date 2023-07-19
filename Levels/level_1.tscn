@@ -1,0 +1,87 @@
+[gd_scene load_steps=11 format=3 uid="uid://18sif2m3hc8c"]
+
+[ext_resource type="Texture2D" uid="uid://dxv1nbe5cavwn" path="res://City/Pavement_Tileset_Clean.png" id="1_ejwvr"]
+[ext_resource type="Texture2D" uid="uid://cp4ab7av2qh5a" path="res://City/Grey_wall_Tile_4.png" id="2_tukm4"]
+[ext_resource type="Texture2D" uid="uid://dn1mwfj4jpi6h" path="res://City/Pavement_Tileset_Cracked.png" id="3_ohlqf"]
+[ext_resource type="PackedScene" uid="uid://lmnx7tw5cud0" path="res://CA/Capt_Awesome.tscn" id="4_2ytv4"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8e6r1"]
+resource_name = "pavement_clean"
+texture = ExtResource("1_ejwvr")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:0/0 = 0
+2:1/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_2p2pp"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_8e6r1")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wlbxr"]
+texture = ExtResource("2_tukm4")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_j6rfv"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_wlbxr")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1kai8"]
+texture = ExtResource("3_ohlqf")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_mx87d"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_1kai8")
+
+[node name="Level_1" type="Node2D"]
+
+[node name="PavementClean" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_2p2pp")
+format = 2
+layer_0/tile_data = PackedInt32Array(262144, 65536, 1, 262145, 65536, 1, 262146, 65536, 1, 262147, 65536, 1, 262148, 65536, 1, 262149, 65536, 1, 262150, 65536, 1, 262151, 65536, 1, 262152, 65536, 1, 262153, 65536, 1, 262154, 65536, 1, 327679, 65536, 1, 393215, 0, 2, 327680, 65536, 2, 327681, 65536, 2, 327682, 65536, 2, 327683, 65536, 2, 327684, 65536, 2, 327685, 65536, 2, 327686, 65536, 2, 327687, 65536, 2, 327688, 65536, 2, 327689, 65536, 2, 327690, 65536, 2, 327691, 131072, 2, 262155, 131072, 1)
+
+[node name="Wall" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_j6rfv")
+format = 2
+layer_0/tile_data = PackedInt32Array(262143, 0, 2, 196608, 65536, 2, 196609, 65536, 2, 196610, 65536, 2, 196611, 65536, 2, 196612, 65536, 2, 196613, 65536, 2, 196614, 65536, 2, 196615, 65536, 2, 196616, 65536, 2, 196617, 65536, 2, 196618, 196608, 2, 131072, 131072, 1, 131073, 131072, 1, 65536, 131072, 0, 65537, 131072, 0, 65538, 65536, 0, 131074, 65536, 1, 65539, 131072, 0, 131075, 131072, 1, 65540, 65536, 0, 131076, 65536, 1, 65541, 131072, 0, 131077, 131072, 1, 65542, 65536, 0, 131078, 65536, 1, 65543, 131072, 0, 131079, 131072, 1, 65544, 65536, 0, 131080, 65536, 1, 65545, 131072, 0, 131081, 131072, 1, 65546, 65536, 0, 131082, 65536, 1, 65547, 131072, 0, 131083, 131072, 1, 131071, 65536, 0, 196607, 65536, 1, 65535, 65536, 0, 0, 65536, 0, 1, 131072, 0, 2, 131072, 0, 3, 131072, 0, 4, 196608, 0, 5, 131072, 0, 6, 131072, 0, 7, 131072, 0, 8, 196608, 0, 9, 131072, 0, 10, 65536, 0, 11, 196608, 0, 196619, 196608, 2)
+
+[node name="PavementCracked" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_mx87d")
+format = 2
+layer_0/tile_data = PackedInt32Array(262146, 65536, 1, 327688, 196608, 2, 262155, 262144, 0)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_2ytv4")]
+position = Vector2(18, 141)

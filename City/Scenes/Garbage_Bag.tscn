@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://City/Garbage_bag.png" type="Texture" id=1]
+[ext_resource path="res://City/Garbage_bag.png" type="Texture2D" id=1]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 3.20364
@@ -9,7 +9,7 @@ height = 4.81439
 [node name="Garbage_Bag" type="StaticBody2D"]
 collision_mask = 0
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2( 1, -5 )
 texture = ExtResource( 1 )
 

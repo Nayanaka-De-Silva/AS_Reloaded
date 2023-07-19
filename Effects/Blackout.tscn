@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://PressStart2P-Regular.ttf" type="FontFile" id=1]
+[ext_resource path="res://Effects/Blackout.gd" type="Script" id=2]
+[ext_resource path="res://CA/CA_Symbol_Shadow.png" type="Texture2D" id=3]
+
+[sub_resource type="FontFile" id=1]
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "FadeIn"
+length = 8.0
+step = 1.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Title:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PackedFloat32Array( 0, 3, 8 ),
+"transitions": PackedFloat32Array( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PackedFloat32Array( 0, 5, 8 ),
+"transitions": PackedFloat32Array( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="Blackout" type="Panel"]
+self_modulate = Color( 0, 0, 0, 1 )
+offset_right = 320.0
+offset_bottom = 180.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+offset_left = 25.0
+offset_top = 85.0
+offset_right = 297.0
+offset_bottom = 101.0
+theme_override_fonts/font = SubResource( 1 )
+theme_override_colors/font_color = Color( 1, 1, 1, 1 )
+text = "The Awesome Squad"
+align = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/FadeIn = SubResource( 2 )
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2( 160, 140 )
+texture = ExtResource( 3 )

@@ -1,49 +1,52 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Dialogue/Speech_Text.gd" type="Script" id=1]
-[ext_resource path="res://PressStart2P-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://PressStart2P-Regular.ttf" type="FontFile" id=2]
 
-[sub_resource type="DynamicFont" id=1]
-size = 11
+[sub_resource type="FontFile" id=1]
+size = 8
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=2]
-size = 9
+[sub_resource type="FontFile" id=2]
+size = 6
 font_data = ExtResource( 2 )
 
 [node name="Speech_Text" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -0.463303
-margin_right = -0.463318
+offset_bottom = -130.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Panel" type="Panel" parent="."]
-margin_left = 10.0
-margin_right = 310.0
-margin_bottom = 50.0
+self_modulate = Color( 0, 0, 0, 1 )
+offset_right = 320.0
+offset_bottom = 26.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Speaker" type="RichTextLabel" parent="Panel"]
-margin_left = 3.0
-margin_right = 297.0
-margin_bottom = 18.0
-custom_fonts/normal_font = SubResource( 1 )
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 317.0
+offset_bottom = 10.0
+clip_contents = false
+theme_override_fonts/normal_font = SubResource( 1 )
+scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Content" type="RichTextLabel" parent="Panel"]
-margin_left = 6.0
-margin_top = 20.0
-margin_right = 294.0
-margin_bottom = 48.0
-custom_fonts/normal_font = SubResource( 2 )
+offset_left = 6.0
+offset_top = 12.0
+offset_right = 314.0
+offset_bottom = 26.0
+clip_contents = false
+theme_override_fonts/normal_font = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

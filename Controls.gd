@@ -1,3 +1,3 @@
 extends Node
 
-var can_move = false
+var can_move = true
