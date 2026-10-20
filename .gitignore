@@ -13,3 +13,9 @@ export_presets.cfg
 .mono/
 data_*/
 mono_crash.*.json
+
+# Agentic AI workflow files
+.docs/
+validate-godot.sh
+run-tests.sh
+.gutconfig.json
