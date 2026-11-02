@@ -23,7 +23,7 @@ enum {
 # INTERNAL VARIABLES
 var knockback_vec = Vector2.ZERO
 var state = IDLE
-var velocity = Vector2.ZERO
+var walk_velocity = Vector2.ZERO
 var attack_ready = false
 var is_dead = false
 
@@ -102,19 +102,19 @@ func direction_change(input_vector):
 
 func move_to(input_vector, delta):
 	animationState.travel("Run")
-	velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta)
+	walk_velocity = walk_velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta)
 	move()
 
 func stop(delta):
 	if state != ATTACK and not is_dead:
 		animationState.travel("Idle")
-	velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
+	walk_velocity = walk_velocity.move_toward(Vector2.ZERO, FRICTION * delta)
 	move()
 
 func move():
-	set_velocity(velocity)
+	set_velocity(walk_velocity)
 	move_and_slide()
-	velocity = velocity
+	walk_velocity = velocity
 
 # ANIMATION FINISHED FUNCTIONS
 func attack_animation_finished():
