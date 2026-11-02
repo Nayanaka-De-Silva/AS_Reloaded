@@ -351,7 +351,7 @@ gut_framework_is_available() {
 
 gut_config_is_available() {
     [[ -f ".gutconfig.json" ]] || return 1
-    grep -qF 'res://test/unit/' ".gutconfig.json" && grep -qF 'res://test/integration/' ".gutconfig.json"
+    grep -qF 'res://Tests/Unit/' ".gutconfig.json" && grep -qF 'res://Tests/Integration/' ".gutconfig.json"
 }
 
 gut_plugin_is_enabled() {
@@ -1050,9 +1050,9 @@ install_gut_framework() {
     fi
     
     # Create test directory structure
-    local test_dir="test"
-    local test_unit_dir="${test_dir}/unit"
-    local test_integration_dir="${test_dir}/integration"
+    local test_dir="Tests"
+    local test_unit_dir="${test_dir}/Unit"
+    local test_integration_dir="${test_dir}/Integration"
     
     if [[ "$DRY_RUN" == false ]]; then
         mkdir -p "$test_unit_dir"
@@ -1066,7 +1066,7 @@ install_gut_framework() {
 extends GutTest
 # Example unit test
 # Run tests via: Project -> Tools -> Gut panel (after enabling plugin)
-# Or via CLI: godot --headless -s addons/gut/gut_cmdln.gd -gdir=res://test/unit
+# Or via CLI: godot --headless -s addons/gut/gut_cmdln.gd -gdir=res://Tests/Unit
 
 func test_example_pass():
     assert_eq(1 + 1, 2, "Basic math should work")
@@ -1091,8 +1091,8 @@ EOF
             cat > ".gutconfig.json" << EOF
 {
   "dirs": [
-    "res://test/unit/",
-    "res://test/integration/"
+    "res://Tests/Unit/",
+    "res://Tests/Integration/"
   ],
   "include_subdirs": true,
   "prefix": "test_",
@@ -1169,7 +1169,7 @@ func after_all():
 ## Testing Example: Player Character
 
 ```gdscript
-# test/unit/test_player.gd
+# Tests/Unit/test_player.gd
 extends GutTest
 
 var player: Player
@@ -1280,10 +1280,10 @@ class TestDamageCalculation:
 godot --headless -s addons/gut/gut_cmdln.gd
 
 # Run specific directory
-godot --headless -s addons/gut/gut_cmdln.gd -gdir=res://test/unit/
+godot --headless -s addons/gut/gut_cmdln.gd -gdir=res://Tests/Unit/
 
 # Run specific test file
-godot --headless -s addons/gut/gut_cmdln.gd -gtest=res://test/unit/test_player.gd
+godot --headless -s addons/gut/gut_cmdln.gd -gtest=res://Tests/Unit/test_player.gd
 
 # Use config file
 godot --headless -s addons/gut/gut_cmdln.gd -gconfig=.gutconfig.json
@@ -1306,12 +1306,12 @@ godot --headless -s addons/gut/gut_cmdln.gd -gconfig=.gutconfig.json
 res://
 ├── addons/
 │   └── gut/              # GUT framework
-├── test/
-│   ├── unit/             # Unit tests (isolated)
+├── Tests/
+│   ├── Unit/             # Unit tests (isolated)
 │   │   ├── test_player.gd
 │   │   ├── test_enemy.gd
 │   │   └── test_inventory.gd
-│   └── integration/      # Integration tests (multiple systems)
+│   └── Integration/      # Integration tests (multiple systems)
 │       └── test_combat_system.gd
 └── .gutconfig.json       # GUT configuration
 ```
@@ -1319,7 +1319,7 @@ res://
 ## Example: Testing a Weapon System
 
 ```gdscript
-# test/unit/test_weapon.gd
+# Tests/Unit/test_weapon.gd
 extends GutTest
 
 var weapon: Weapon
@@ -1483,8 +1483,8 @@ create_test_runner_script() {
 # Test Runner - Wrapper for GUT (Godot Unit Test)
 # Usage:
 #   ./run-tests.sh                    # Run all tests
-#   ./run-tests.sh test/unit/         # Run all tests in directory
-#   ./run-tests.sh test/unit/test_player.gd  # Run specific test file
+#   ./run-tests.sh Tests/Unit/         # Run all tests in directory
+#   ./run-tests.sh Tests/Unit/test_player.gd  # Run specific test file
 
 set -euo pipefail
 
@@ -3481,7 +3481,7 @@ configure_exclusions() {
     fi
     
     # Use wildcard pattern for docs directory to match any version
-    # Note: We DON'T add addons/ or test/ to gitignore as they should be committed
+    # Note: We DON'T add addons/ or Tests/ to gitignore as they should be committed
     for entry in "${DOCS_BASE_DIR}/" "validate-godot.sh" "run-tests.sh" ".gutconfig.json"; do
         if ! grep -qF "$entry" "$gitignore" 2>/dev/null; then
             additions+="$entry"$'\n'
