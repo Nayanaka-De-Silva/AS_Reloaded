@@ -46,9 +46,12 @@ DOCS_VERSION=4.5
 
 | Directory | Purpose |
 |-----------|---------|
-| `scenes/` | Scene files (.tscn) |
-| `scripts/` | GDScript files (.gd) |
-| `assets/` | Images, audio, fonts |
+| `Assets/` | Game content by feature: scenes, their scripts, art, audio, fonts |
+| `Components/` | Reusable gameplay building blocks (hitboxes, stats, camera) |
+| `Effects/` | Visual effects |
+| `Globals/` | Autoload singletons |
+| `Resources/` | Shared resource files |
+| `Tests/` | `Unit/` and `Integration/` GUT tests, `Manual/` test scenes |
 | `.copilot/skills/` | AI skill templates |
 | `.docs/godot-4.5/` | Offline Godot documentation |
 

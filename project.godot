@@ -11,14 +11,14 @@ config_version=5
 [application]
 
 config/name="AS_Reloaded"
-run/main_scene="res://TitleScreen/TitleScreen.tscn"
+run/main_scene="res://Assets/TitleScreen/TitleScreen.tscn"
 config/features=PackedStringArray("4.5")
-config/icon="res://CA/CA_Symbol.png"
+config/icon="res://Assets/Characters/CaptainAwesome/CA_Symbol.png"
 
 [autoload]
 
-CA_Stats="*res://CA/CA_Stats.tscn"
-Controls="*res://Controls.tscn"
+CA_Stats="*res://Globals/CA_Stats.tscn"
+Controls="*res://Globals/Controls.tscn"
 
 [display]
 
@@ -82,4 +82,4 @@ move_down={
 
 textures/canvas_textures/default_texture_filter=0
 environment/defaults/default_clear_color=Color(0.0980392, 0.0980392, 0.0980392, 1)
-environment/defaults/default_environment="res://default_env.tres"
+environment/defaults/default_environment="res://Resources/default_env.tres"

@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://PressStart2P-Regular.ttf" type="FontFile" id=1]
+[ext_resource path="res://Assets/UI/Fonts/PressStart2P-Regular.ttf" type="FontFile" id=1]
 [ext_resource path="res://Effects/Blackout.gd" type="Script" id=2]
-[ext_resource path="res://CA/CA_Symbol_Shadow.png" type="Texture2D" id=3]
+[ext_resource path="res://Assets/Characters/CaptainAwesome/CA_Symbol_Shadow.png" type="Texture2D" id=3]
 
 [sub_resource type="FontFile" id=1]
 font_data = ExtResource( 1 )
